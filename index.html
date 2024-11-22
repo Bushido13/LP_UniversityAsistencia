@@ -16,7 +16,8 @@
         <p>Una solución eficiente para el control de asistencia universitaria.</p>
     </header>
 
-    <section id="features">
+ <section id="features-gallery">
+    <div class="features">
         <h2>Características</h2>
         <ul>
             <li>Compatibilidad con Android 5.1 o superior.</li>
@@ -24,18 +25,24 @@
             <li>Diseño amigable y fácil de usar.</li>
             <li>Seguimiento en tiempo real de la asistencia.</li>
         </ul>
-    </section>
-
-    <section id="gallery">
-        <h2>Galería</h2>
-        <div class="images">
+    </div>
+    <div class="gallery">
+    <h2>Galería</h2>
+    <div class="carousel">
+        <div class="carousel-images">
             <img src="assets/images/University Asistencia1.jpg" alt="Captura de pantalla 1">
             <img src="assets/images/University Asistencia2.jpg" alt="Captura de pantalla 2">
             <img src="assets/images/University Asistencia3.jpg" alt="Captura de pantalla 3">
             <img src="assets/images/University Asistencia4.jpg" alt="Captura de pantalla 4">
             <img src="assets/images/University Asistencia5.jpg" alt="Captura de pantalla 5">
         </div>
-    </section>
+        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+    </div>
+</div>
+
+</section>
+
 
     <section id="download">
         <h2>Descargar</h2>
@@ -55,6 +62,22 @@
                 alert('La descarga está disponible solo en dispositivos Android.');
             }
         }
+
+      let currentIndex = 0;
+
+function moveCarousel(direction) {
+    const carouselImages = document.querySelector('.carousel-images');
+    const images = carouselImages.querySelectorAll('img');
+    const totalImages = images.length;
+
+    // Calcular el nuevo índice
+    currentIndex = (currentIndex + direction + totalImages) % totalImages;
+
+    // Mover el carrusel para mostrar solo una imagen
+    const imageWidth = images[0].clientWidth; // Obtiene el ancho de una imagen
+    carouselImages.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+}
+
     </script>
 </body>
 </html>
