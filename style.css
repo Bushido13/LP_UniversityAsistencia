@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #eaab19;
     color: white;
     text-align: center;
     padding: 1rem;
@@ -38,17 +38,18 @@ section {
 }
 
 #download-btn {
-    background-color: #4CAF50;
+    background-color: #eaab19;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
     cursor: pointer;
     border-radius: 5px;
+    margin-bottom: 10rem;
 }
 
 #download-btn:hover {
-    background-color: #45a049;
+    background-color: #ecbd4e;
 }
 
 footer {
