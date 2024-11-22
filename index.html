@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="University-Asistencia: una app diseñada para gestionar asistencia de manera eficiente">
+    <title>University-Asistencia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="Logo de University-Asistencia">
+        </div>
+        <h1>University-Asistencia</h1>
+        <p>Una solución eficiente para el control de asistencia universitaria.</p>
+    </header>
+
+    <section id="features">
+        <h2>Características</h2>
+        <ul>
+            <li>Compatibilidad con Android 5.1 o superior.</li>
+            <li>Requiere cámara para escanear códigos QR.</li>
+            <li>Diseño amigable y fácil de usar.</li>
+            <li>Seguimiento en tiempo real de la asistencia.</li>
+        </ul>
+    </section>
+
+    <section id="gallery">
+        <h2>Galería</h2>
+        <div class="images">
+            <img src="assets/images/University Asistencia1.jpg" alt="Captura de pantalla 1">
+            <img src="assets/images/University Asistencia2.jpg" alt="Captura de pantalla 2">
+            <img src="assets/images/University Asistencia3.jpg" alt="Captura de pantalla 3">
+            <img src="assets/images/University Asistencia4.jpg" alt="Captura de pantalla 4">
+            <img src="assets/images/University Asistencia5.jpg" alt="Captura de pantalla 5">
+        </div>
+    </section>
+
+    <section id="download">
+        <h2>Descargar</h2>
+        <p>¡Descarga la app ahora y empieza a gestionar la asistencia de manera más eficiente!</p>
+        <button id="download-btn" onclick="downloadAPK()">Descargar APK</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 University-Asistencia. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function downloadAPK() {
+            if (/Android/i.test(navigator.userAgent)) {
+                window.location.href = 'assets/apk/University-Asistencia.apk';
+            } else {
+                alert('La descarga está disponible solo en dispositivos Android.');
+            }
+        }
+    </script>
+</body>
+</html>
