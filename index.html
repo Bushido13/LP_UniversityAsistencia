@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="University-Asistencia: una app diseñada para gestionar asistencia de manera eficiente">
     <title>University-Asistencia</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -48,6 +49,10 @@
         <h2>Descargar</h2>
         <p>¡Descarga la app ahora y empieza a gestionar la asistencia de manera más eficiente!</p>
         <button id="download-btn" onclick="downloadAPK()">Descargar APK</button>
+         <div id="qr-container" style="display: none; text-align: center; margin-top: 20px;">
+        <h3>Escanea este código QR para descargar la app:</h3>
+        <div id="qrcode"></div>
+    </div>
     </section>
 
     <footer>
@@ -77,6 +82,35 @@ function moveCarousel(direction) {
     const imageWidth = images[0].clientWidth; // Obtiene el ancho de una imagen
     carouselImages.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
 }
+
+// Función para detectar si el dispositivo es un escritorio
+function isDesktop() {
+    const width = window.innerWidth || document.documentElement.clientWidth;
+    return width > 1024; // Asume que >1024px es un dispositivo de escritorio
+}
+
+function showQRCodeIfDesktop() {
+    if (isDesktop()) {
+        const qrContainer = document.getElementById('qr-container');
+        qrContainer.style.display = 'block'; // Mostrar el contenedor del QR
+
+        // Asegúrate de que el div 'qrcode' esté vacío antes de generar
+        const qrCodeDiv = document.getElementById('qrcode');
+        qrCodeDiv.innerHTML = ''; // Limpia el contenido previo si existe
+
+        // Generar el código QR
+        new QRCode(qrCodeDiv, {
+            text: 'https://bushido13.github.io/LP_UniversityAsistencia/assets/apk/University-Asistencia.apk', // URL del APK
+            width: 200,
+            height: 200,
+        });
+    }
+}
+
+// Llama a la función cuando se cargue la página
+document.addEventListener('DOMContentLoaded', showQRCodeIfDesktop);
+
+
 
     </script>
 </body>

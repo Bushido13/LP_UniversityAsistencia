@@ -176,3 +176,14 @@ footer {
         margin: 0.5rem auto; 
     }
 }
+
+#qr-container {
+    margin-top: 20px;
+}
+#qrcode {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
